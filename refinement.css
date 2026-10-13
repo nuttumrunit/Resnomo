@@ -45,6 +45,44 @@
   opacity: 0.9;
 }
 
+.machine-stage > svg > * {
+  transition: opacity 420ms ease, filter 420ms ease;
+}
+
+.machine-stage.is-exploded > svg > :not([data-organ]):not(.task-track):not(.task-orb) {
+  opacity: .2;
+}
+
+.machine-stage.is-exploded [data-organ] {
+  filter: drop-shadow(0 10px 12px rgb(0 0 0 / .7));
+}
+
+.machine-card.is-separated {
+  border-color: color-mix(in srgb, var(--acid) 42%, var(--line));
+}
+
+.machine-card.is-inspecting {
+  animation: inspection-focus 1.35s var(--ease) both;
+}
+
+@keyframes inspection-focus {
+  0%, 100% { box-shadow: inset 0 0 0 0 transparent; }
+  35% { box-shadow: inset 0 0 0 1px var(--acid), 0 0 28px rgb(141 255 69 / .1); }
+}
+
+.figure-head em {
+  display: inline-flex;
+  margin-left: 10px;
+  padding: 3px 6px 2px;
+  border: 1px solid color-mix(in srgb, var(--acid) 44%, var(--line));
+  color: var(--acid);
+  font: 600 8px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-style: normal;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+
 @media (max-width: 820px) {
   .machine-stage svg {
     margin-bottom: -28px;

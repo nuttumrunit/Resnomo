@@ -18,6 +18,8 @@ const organDetails = {
 const stage = document.querySelector(".machine-stage");
 const machine = document.querySelector("[data-machine]");
 const readout = document.querySelector("[data-readout]");
+const hint = document.querySelector("[data-hint]");
+const assemblyState = document.querySelector("[data-assembly-state]");
 const sideState = document.querySelector("[data-side-state]");
 const sideIndex = document.querySelector("[data-side-index]");
 const sideOrgan = document.querySelector("[data-side-organ]");
@@ -67,15 +69,28 @@ document.querySelectorAll("[data-organ-card]").forEach((card) => card.addEventLi
 function toggleExplode(force) {
   exploded = typeof force === "boolean" ? force : !exploded;
   stage.classList.toggle("is-exploded", exploded);
+  machine.classList.toggle("is-separated", exploded);
   document.querySelectorAll("[data-explode]").forEach((button) => button.textContent = exploded ? "Assemble anatomy" : "Explode anatomy");
+  if (assemblyState) assemblyState.textContent = exploded ? "Separated" : "Assembled";
+  if (hint) hint.textContent = exploded ? "Six systems separated · Select an organ to inspect it" : "Hover an organ · Space separates the machine";
   live.textContent = exploded ? "Agent anatomy separated into six assemblies." : "Agent anatomy assembled.";
   run();
 }
 document.querySelectorAll("[data-explode]").forEach((button) => button.addEventListener("click", () => {
   toggleExplode();
   if (!button.closest(".machine-card")) {
-    document.querySelector("#anatomy")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    machine?.scrollIntoView({ behavior: reduce.matches ? "auto" : "smooth", block: "center" });
   }
+}));
+
+document.querySelectorAll("[data-inspect]").forEach((button) => button.addEventListener("click", (event) => {
+  event.preventDefault();
+  toggleExplode(false);
+  machine?.scrollIntoView({ behavior: reduce.matches ? "auto" : "smooth", block: "center" });
+  machine?.classList.remove("is-inspecting");
+  requestAnimationFrame(() => machine?.classList.add("is-inspecting"));
+  setTimeout(() => machine?.classList.remove("is-inspecting"), 1400);
+  live.textContent = "Agent anatomy in inspection view. Select one of the six systems.";
 }));
 
 machine.addEventListener("keydown", (event) => {
@@ -104,8 +119,9 @@ function tick(now) {
   let moving = false;
   springs.forEach((state, node) => {
     const [mx, my] = node.dataset.move.split(",").map(Number);
-    const tx = exploded ? mx : 0;
-    const ty = exploded ? my : 0;
+    const spread = matchMedia("(max-width: 820px)").matches ? 1.55 : 2.25;
+    const tx = exploded ? mx * spread : 0;
+    const ty = exploded ? my * spread : 0;
     for (let i = 0; i < 3; i++) {
       const step = dt / 3;
       state.vx += ((tx - state.x) * 68 - state.vx * 15.5) * step;
