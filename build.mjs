@@ -439,7 +439,7 @@ const html = `<!doctype html>
           <div class="note-signoff"><span>— Resnomo developer note</span><span>Built in public · V0.1</span></div>
         </div>
         <div class="hero-actions">
-          <a class="button primary" href="#anatomy">Inspect the anatomy</a>
+          <a class="button primary" href="#anatomy" data-inspect>Inspect the anatomy</a>
           <button class="button" data-explode>Explode anatomy</button>
         </div>
       </section>
@@ -477,7 +477,7 @@ const html = `<!doctype html>
         <h2>An agent is not one model.<br />It is a coordinated body.</h2>
         <p class="section-intro">Resnomo exposes the six systems required for an agent to move from intent to verified action. Select any organ to inspect its responsibility in the execution chain.</p>
         <figure class="machine-card" data-machine tabindex="0" role="group" aria-label="Interactive Agent Cognition Engine. Use arrow keys to select an organ and Space to separate the machine.">
-          <div class="figure-head"><span>Fig 02</span><span>Agent Cognition Engine</span></div>
+          <div class="figure-head"><span>Fig 02</span><span>Agent Cognition Engine <em data-assembly-state>Assembled</em></span></div>
           <div class="machine-stage iso">${heroSvg}</div>
           <figcaption><span data-hint>Hover an organ · Space separates the machine</span><strong data-readout>perceive · reading environment</strong></figcaption>
           <div class="sr-only" aria-live="polite" data-live></div>
