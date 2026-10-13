@@ -1,0 +1,8 @@
+node_modules/
+.resnomo/
+archive/
+preview*.png
+*.log
+.DS_Store
+Thumbs.db
+source/.git/

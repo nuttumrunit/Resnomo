@@ -1,0 +1,17 @@
+{
+  "name": "resnomo",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "An observable six-stage execution kernel for tool-using agents.",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node serve.mjs",
+    "example": "node examples/run-mission.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
