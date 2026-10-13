@@ -406,7 +406,7 @@ const html = `<!doctype html>
         <a href="https://x.com/" target="_blank" rel="noreferrer" aria-label="Resnomo on X" title="X">
           <span class="social-icon" style="--icon:url('./assets/brand/x.svg')" aria-hidden="true"></span><span class="sr-only">X</span>
         </a>
-        <a href="https://huggingface.co/" target="_blank" rel="noreferrer" aria-label="Resnomo on Hugging Face" title="Hugging Face">
+        <a href="https://huggingface.co/spaces/tardumo/Resnomo/tree/main" target="_blank" rel="noreferrer" aria-label="Resnomo source on Hugging Face" title="Hugging Face source">
           <span class="social-icon" style="--icon:url('./assets/brand/huggingface.svg')" aria-hidden="true"></span><span class="sr-only">Hugging Face</span>
         </a>
       </div>
