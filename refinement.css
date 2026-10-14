@@ -1067,13 +1067,6 @@
   color: var(--ink);
 }
 
-.rail-links a[aria-disabled="true"] {
-  color: var(--faint);
-  cursor: default;
-  opacity: .55;
-  pointer-events: none;
-}
-
 .rail-links svg {
   width: 15px;
   height: 15px;
