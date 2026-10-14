@@ -403,16 +403,16 @@ const html = `<!doctype html>
         <a href="#evidence">Evidence</a>
       </nav>
       <div class="rail-links" aria-label="Project links">
-        <a href="https://x.com/resnomonx" target="_blank" rel="noreferrer" aria-label="Resnomo on X" title="X">
+        <a aria-disabled="true" tabindex="-1" aria-label="Resnomo X link coming soon" title="X · TBA">
           <span class="social-icon" style="--icon:url('./assets/brand/x.svg')" aria-hidden="true"></span><span class="sr-only">X</span>
         </a>
-        <a href="https://huggingface.co/spaces/tardumo/Resnomo/tree/main" target="_blank" rel="noreferrer" aria-label="Resnomo source on Hugging Face" title="Hugging Face source">
+        <a aria-disabled="true" tabindex="-1" aria-label="Resnomo Hugging Face link coming soon" title="Hugging Face · TBA">
           <span class="social-icon" style="--icon:url('./assets/brand/huggingface.svg')" aria-hidden="true"></span><span class="sr-only">Hugging Face</span>
         </a>
       </div>
       <div class="ca-box">
-        <div><span>Contract address</span><button type="button" data-copy-ca>Copy</button></div>
-        <code data-ca>4o2PSdoR8KpViHZhDSeuUQDT3m4wemTkqysSrNWXpump</code>
+        <div><span>Contract address</span><button type="button" data-copy-ca disabled>Copy</button></div>
+        <code data-ca>TBA</code>
       </div>
     </aside>
 
