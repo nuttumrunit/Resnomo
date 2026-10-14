@@ -1,11 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { DellmodEngine } from "../runtime/engine.mjs";
+import { ResnomoEngine } from "../runtime/engine.mjs";
 import { VolatileMemory } from "../runtime/memory.mjs";
 
 test("a verified mission crosses all six organs and becomes a reflex", async () => {
   const memory = new VolatileMemory();
-  const engine = new DellmodEngine({ memory });
+  const engine = new ResnomoEngine({ memory });
   const result = await engine.run({ objective: "Echo evidence", tool: "echo", input: { message: "alive" } });
 
   assert.equal(result.status, "verified");
@@ -22,7 +22,7 @@ test("a protected tool stops at the immune system without execution", async () =
     async execute() { executed = true; return { ok: true }; },
     verify: () => true,
   }]]);
-  const engine = new DellmodEngine({ tools, memory: new VolatileMemory() });
+  const engine = new ResnomoEngine({ tools, memory: new VolatileMemory() });
 
   await assert.rejects(
     engine.run({ objective: "Protected action", tool: "protected", input: {} }),
@@ -39,7 +39,7 @@ test("failed evidence never enters memory", async () => {
     async execute() { return { ok: false }; },
     verify: () => false,
   }]]);
-  const engine = new DellmodEngine({ tools, memory });
+  const engine = new ResnomoEngine({ tools, memory });
 
   await assert.rejects(
     engine.run({ objective: "Reject invalid evidence", tool: "bad-evidence" }),

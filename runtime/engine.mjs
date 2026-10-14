@@ -12,17 +12,17 @@ const organFor = {
   remember: "memory",
 };
 
-export class DellmodError extends Error {
-  constructor(message, { code = "DELLMOD_ERROR", status = 400, details } = {}) {
+export class ResnomoError extends Error {
+  constructor(message, { code = "RESNOMO_ERROR", status = 400, details } = {}) {
     super(message);
-    this.name = "DellmodError";
+    this.name = "ResnomoError";
     this.code = code;
     this.status = status;
     this.details = details;
   }
 }
 
-export class DellmodEngine extends EventEmitter {
+export class ResnomoEngine extends EventEmitter {
   constructor({ tools = createDefaultTools(), memory = new MemoryStore(), clock = () => new Date() } = {}) {
     super();
     this.tools = tools;
@@ -76,10 +76,10 @@ export class DellmodEngine extends EventEmitter {
 
     const mission = await stage("perceive", async () => {
       if (typeof request.objective !== "string" || !request.objective.trim()) {
-        throw new DellmodError("objective is required", { code: "INVALID_MISSION" });
+        throw new ResnomoError("objective is required", { code: "INVALID_MISSION" });
       }
       if (typeof request.tool !== "string" || !this.tools.has(request.tool)) {
-        throw new DellmodError("A registered tool is required", {
+        throw new ResnomoError("A registered tool is required", {
           code: "UNKNOWN_TOOL",
           details: { available: this.manifests().map((tool) => tool.name) },
         });
@@ -102,7 +102,7 @@ export class DellmodEngine extends EventEmitter {
       const required = tool.requiredScopes || [];
       const missing = required.filter((scope) => !mission.approvedScopes.includes(scope));
       if (missing.length) {
-        throw new DellmodError(`Missing required scope: ${missing.join(", ")}`, {
+        throw new ResnomoError(`Missing required scope: ${missing.join(", ")}`, {
           code: "PERMISSION_DENIED",
           status: 403,
           details: { missing, required, approved: mission.approvedScopes },
@@ -114,7 +114,7 @@ export class DellmodEngine extends EventEmitter {
     const evidence = await stage("execute", () => tool.execute(mission.input, { runId, route, mission }));
     await stage("verify", async () => {
       const verified = tool.verify ? await tool.verify(evidence, { runId, route, mission }) : evidence !== undefined;
-      if (!verified) throw new DellmodError("Returned evidence failed verification", { code: "VERIFICATION_FAILED", status: 422 });
+      if (!verified) throw new ResnomoError("Returned evidence failed verification", { code: "VERIFICATION_FAILED", status: 422 });
       return { verified: true };
     });
 

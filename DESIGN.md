@@ -1,8 +1,8 @@
-# Dellmod — Agent Anatomy Network
+# Resnomo — Agent Anatomy Network
 
 ## Concept
 
-Dellmod turns an autonomous agent into a physical instrument whose internal
+Resnomo turns an autonomous agent into a physical instrument whose internal
 organs can be observed while it works. The cognition engine receives a mission,
 perceives sources, plans a route, operates tools, verifies the result and stores
 the successful route as a reusable reflex.
