@@ -62,7 +62,7 @@ export function createDefaultTools() {
         const timeout = setTimeout(() => controller.abort(), 8_000);
         try {
           const response = await fetch(url, {
-            headers: { "user-agent": "Resnomo/0.1 (+observable-agent-kernel)" },
+            headers: { "user-agent": "Dellmod/0.1 (+observable-agent-kernel)" },
             redirect: "error",
             signal: controller.signal,
           });

@@ -1,5 +1,5 @@
 ---
-title: Resnomo
+title: Dellmod
 emoji: ⚙️
 colorFrom: gray
 colorTo: green
@@ -9,11 +9,11 @@ pinned: false
 license: mit
 ---
 
-# Resnomo
+# Dellmod
 
 **An observable six-stage execution kernel for tool-using agents.**
 
-Resnomo treats an agent as a coordinated body instead of a hidden model call. Every mission crosses six explicit organs:
+Dellmod treats an agent as a coordinated body instead of a hidden model call. Every mission crosses six explicit organs:
 
 `perceive → plan → authorize → execute → verify → remember`
 
@@ -30,7 +30,7 @@ The repository contains both the interactive mechanical website and a runnable N
 - Automated tests for success, authorization failure and verification failure.
 - The complete interactive frontend and its mechanical figure source.
 
-Resnomo does not ship a hosted model or pretend an external network is running. A model planner can be connected by registering another planner or tool adapter; the orchestration, permission, evidence and memory path already runs locally.
+Dellmod does not ship a hosted model or pretend an external network is running. A model planner can be connected by registering another planner or tool adapter; the orchestration, permission, evidence and memory path already runs locally.
 
 ## Run locally
 
@@ -52,7 +52,7 @@ curl -X POST http://127.0.0.1:4190/api/missions \
   -d '{
     "objective": "Return verifiable evidence",
     "tool": "echo",
-    "input": {"message": "Resnomo is running"}
+    "input": {"message": "Dellmod is running"}
   }'
 ```
 
@@ -95,7 +95,7 @@ const tools = new Map([
 ]);
 ```
 
-Pass the registry into `new ResnomoEngine({ tools })`. A request without `account:write` stops at the immune system and never reaches execution.
+Pass the registry into `new DellmodEngine({ tools })`. A request without `account:write` stops at the immune system and never reaches execution.
 
 ## Repository map
 
@@ -105,7 +105,7 @@ examples/       runnable mission example
 tests/          Node test suite
 public/         generated website served to users
 build.mjs       generates the Agent Cognition Engine figure and page
-serve.mjs       static server and Resnomo HTTP API
+serve.mjs       static server and Dellmod HTTP API
 source/         Anatomy drawing kit, tracked as its upstream submodule
 ```
 
@@ -115,4 +115,4 @@ Clone the GitHub repository with its figure source:
 git clone --recurse-submodules https://github.com/nuttumrunit/Resnomo.git
 ```
 
-The Resnomo runtime and website are MIT licensed. The Anatomy drawing kit retains its own MIT license and upstream attribution.
+The Dellmod runtime and website are MIT licensed. The Anatomy drawing kit retains its own MIT license and upstream attribution.

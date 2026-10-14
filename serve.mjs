@@ -1,12 +1,12 @@
 import http from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import { ResnomoEngine, ResnomoError } from "./runtime/engine.mjs";
+import { DellmodEngine, DellmodError } from "./runtime/engine.mjs";
 import { MemoryStore } from "./runtime/memory.mjs";
 
 const PORT = Number(process.env.PORT || 4190);
 const ROOT = path.resolve("public");
-const engine = new ResnomoEngine({ memory: new MemoryStore() });
+const engine = new DellmodEngine({ memory: new MemoryStore() });
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -54,13 +54,13 @@ async function readJson(req) {
   let size = 0;
   for await (const chunk of req) {
     size += chunk.length;
-    if (size > 1_048_576) throw new ResnomoError("Request body exceeds 1 MB", { code: "BODY_TOO_LARGE", status: 413 });
+    if (size > 1_048_576) throw new DellmodError("Request body exceeds 1 MB", { code: "BODY_TOO_LARGE", status: 413 });
     chunks.push(chunk);
   }
   try {
     return JSON.parse(Buffer.concat(chunks).toString("utf8") || "{}");
   } catch {
-    throw new ResnomoError("Request body must be valid JSON", { code: "INVALID_JSON" });
+    throw new DellmodError("Request body must be valid JSON", { code: "INVALID_JSON" });
   }
 }
 
@@ -77,7 +77,7 @@ const server = http.createServer(async (req, res) => {
       return;
     }
     if (req.method === "GET" && url.pathname === "/api/health") {
-      json(res, 200, { ok: true, service: "resnomo", stages: 6 });
+      json(res, 200, { ok: true, service: "dellmod", stages: 6 });
       return;
     }
     if (req.method === "GET" && url.pathname === "/api/tools") {
@@ -118,5 +118,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, process.env.HOST || "127.0.0.1", () => {
-  console.log(`Resnomo is running at http://127.0.0.1:${PORT}/`);
+  console.log(`Dellmod is running at http://127.0.0.1:${PORT}/`);
 });

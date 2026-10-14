@@ -1,7 +1,7 @@
-import { ResnomoEngine } from "../runtime/engine.mjs";
+import { DellmodEngine } from "../runtime/engine.mjs";
 import { VolatileMemory } from "../runtime/memory.mjs";
 
-const engine = new ResnomoEngine({ memory: new VolatileMemory() });
+const engine = new DellmodEngine({ memory: new VolatileMemory() });
 engine.on("stage", ({ phase, organ, status }) => {
   console.log(`${organ.padEnd(7)} ${phase.padEnd(10)} ${status}`);
 });

@@ -2,7 +2,7 @@ import { appendFile, mkdir, readFile } from "node:fs/promises";
 import path from "node:path";
 
 export class MemoryStore {
-  constructor({ file = path.resolve(".resnomo/reflexes.jsonl") } = {}) {
+  constructor({ file = path.resolve(".dellmod/reflexes.jsonl") } = {}) {
     this.file = file;
   }
 

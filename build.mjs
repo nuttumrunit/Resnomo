@@ -352,7 +352,7 @@ const logoHero = `
     <path class="task-track" d="M244 254C270 240 284 225 309 214C347 198 393 211 411 246C430 284 402 316 366 331C337 344 310 364 291 395" />
     <circle data-task-orb class="task-orb" cx="244" cy="254" r="4.2"/>
   </svg>
-  <img class="logo-base" src="./assets/resnomo-logo.png" alt="" />
+  <img class="logo-base" src="./assets/dellmod-logo.jpg" alt="" />
   ${[
     ["brain", "18,-18", "brain-piece"],
     ["eyes", "-28,2", "eyes-piece"],
@@ -360,7 +360,7 @@ const logoHero = `
     ["hands", "-4,28", "hands-piece"],
     ["heart", "12,36", "heart-piece"],
     ["memory", "-35,-10", "memory-piece"],
-  ].map(([organ, move, cls]) => `<div class="logo-piece ${cls}" data-organ="${organ}" data-move="${move}"><img src="./assets/resnomo-logo.png" alt="" /></div>`).join("")}
+  ].map(([organ, move, cls]) => `<div class="logo-piece ${cls}" data-organ="${organ}" data-move="${move}"><img src="./assets/dellmod-logo.jpg" alt="" /></div>`).join("")}
   <svg class="logo-details" viewBox="0 0 640 540" focusable="false">
     <g class="detail-lines">
       <path d="M254 168H355"/><path d="M268 158V178M286 158V174M304 158V178M322 158V174M340 158V178"/>
@@ -379,21 +379,21 @@ const html = `<!doctype html>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#050505" />
-  <meta name="description" content="Resnomo makes the anatomy of autonomous agents observable." />
-  <title>Resnomo — Agent Anatomy Network</title>
-  <link rel="icon" href="./assets/resnomo-logo.png" />
+  <meta name="description" content="Dellmod makes the anatomy of autonomous agents observable." />
+  <title>Dellmod — Agent Anatomy Network</title>
+  <link rel="icon" href="./assets/dellmod-logo.jpg" />
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./refinement.css" />
   <style>${k.ISO_CSS}</style>
 </head>
 <body>
   <header class="mobile-head">
-    <a class="brand" href="#top" aria-label="Resnomo home"><img src="./assets/resnomo-logo.png" alt="" /><span>Resnomo</span></a>
+    <a class="brand" href="#top" aria-label="Dellmod home"><img src="./assets/dellmod-logo.jpg" alt="" /><span>Dellmod</span></a>
     <button class="menu" aria-expanded="false" aria-controls="site-nav">Menu</button>
   </header>
   <div class="layout" id="top">
     <aside class="rail">
-      <a class="brand" href="#top"><img src="./assets/resnomo-logo.png" alt="Resnomo logo" /><span>Resnomo</span></a>
+      <a class="brand" href="#top"><img src="./assets/dellmod-logo.jpg" alt="Dellmod logo" /><span>Dellmod</span></a>
       <nav id="site-nav" aria-label="Primary navigation">
         <a class="active" href="#engine">Engine</a>
         <a href="#overview">Dev note</a>
@@ -403,16 +403,16 @@ const html = `<!doctype html>
         <a href="#evidence">Evidence</a>
       </nav>
       <div class="rail-links" aria-label="Project links">
-        <a href="https://x.com/resnomonx" target="_blank" rel="noreferrer" aria-label="Resnomo on X" title="X">
+        <a aria-disabled="true" tabindex="-1" aria-label="Dellmod X link coming soon" title="X · TBA">
           <span class="social-icon" style="--icon:url('./assets/brand/x.svg')" aria-hidden="true"></span><span class="sr-only">X</span>
         </a>
-        <a href="https://huggingface.co/spaces/tardumo/Resnomo/tree/main" target="_blank" rel="noreferrer" aria-label="Resnomo source on Hugging Face" title="Hugging Face source">
+        <a aria-disabled="true" tabindex="-1" aria-label="Dellmod Hugging Face link coming soon" title="Hugging Face · TBA">
           <span class="social-icon" style="--icon:url('./assets/brand/huggingface.svg')" aria-hidden="true"></span><span class="sr-only">Hugging Face</span>
         </a>
       </div>
       <div class="ca-box">
-        <div><span>Contract address</span><button type="button" data-copy-ca>Copy</button></div>
-        <code data-ca>4o2PSdoR8KpViHZhDSeuUQDT3m4wemTkqysSrNWXpump</code>
+        <div><span>Contract address</span><button type="button" data-copy-ca disabled>Copy</button></div>
+        <code data-ca>TBA</code>
       </div>
     </aside>
 
@@ -430,13 +430,13 @@ const html = `<!doctype html>
               <p>We see the final answer. Sometimes we see a chain of text. We rarely see the working body underneath it: which perception changed the plan, which permission opened the route, which tool performed the action, and what evidence proved the result.</p>
             </div>
             <div>
-              <p>That is the idea behind Resnomo.</p>
-              <p>Resnomo treats an agent less like a chat window and more like a machine with organs. Perception reads the environment. Planning composes a route. Authorization controls the boundary. Execution touches the outside world. Verification checks what really happened. Memory keeps only what can be used again.</p>
+              <p>That is the idea behind Dellmod.</p>
+              <p>Dellmod treats an agent less like a chat window and more like a machine with organs. Perception reads the environment. Planning composes a route. Authorization controls the boundary. Execution touches the outside world. Verification checks what really happened. Memory keeps only what can be used again.</p>
               <p>I do not want you to trust an agent because it sounds confident.</p>
               <p><strong>I want you to be able to open the machine and inspect the reason it moved.</strong></p>
             </div>
           </div>
-          <div class="note-signoff"><span>— Resnomo developer note</span><span>Built in public · V0.1</span></div>
+          <div class="note-signoff"><span>— Dellmod developer note</span><span>Built in public · V0.1</span></div>
         </div>
         <div class="hero-actions">
           <a class="button primary" href="#anatomy" data-inspect>Inspect the anatomy</a>
@@ -475,7 +475,7 @@ const html = `<!doctype html>
       <section class="section" id="anatomy">
         <div class="section-kicker"><span>02</span><span>Anatomy of autonomy</span></div>
         <h2>An agent is not one model.<br />It is a coordinated body.</h2>
-        <p class="section-intro">Resnomo exposes the six systems required for an agent to move from intent to verified action. Select any organ to inspect its responsibility in the execution chain.</p>
+        <p class="section-intro">Dellmod exposes the six systems required for an agent to move from intent to verified action. Select any organ to inspect its responsibility in the execution chain.</p>
         <figure class="machine-card" data-machine tabindex="0" role="group" aria-label="Interactive Agent Cognition Engine. Use arrow keys to select an organ and Space to separate the machine.">
           <div class="figure-head"><span>Fig 02</span><span>Agent Cognition Engine <em data-assembly-state>Assembled</em></span></div>
           <div class="machine-stage iso">${heroSvg}</div>
@@ -500,7 +500,7 @@ const html = `<!doctype html>
           <article class="instrument"><div class="mini-machine iso">${miniFigure("lock")}</div><span>Instrument C</span><h3>Permission lock</h3><p>Sensitive actions remain physically blocked until the required authorization is present.</p></article>
         </div>
         <div class="long-copy">
-          <p class="pull">Most agent systems remember what was said. Resnomo is interested in remembering what was proven to work.</p>
+          <p class="pull">Most agent systems remember what was said. Dellmod is interested in remembering what was proven to work.</p>
           <div class="copy-columns">
             <p>A Reflex is not a prompt fragment and it is not a claim written by the agent. It is a versioned route attached to the environment in which it succeeded: inputs, scopes, tool versions, returned evidence and the exact condition that closed the task.</p>
             <p>If the environment changes, the Reflex does not quietly pretend to remain valid. It degrades. The route returns to verification, and only a successful replay can restore it. Failure becomes part of the record instead of something the interface hides.</p>
@@ -526,7 +526,7 @@ const html = `<!doctype html>
       <section class="section evidence-section" id="evidence">
         <div class="section-kicker"><span>05</span><span>Evidence before confidence</span></div>
         <h2>The model can propose.<br />The system has to prove.</h2>
-        <p class="section-intro">Language models are good at producing plausible next steps. Plausibility is not the same as completion. Resnomo separates a proposed action from an accepted result.</p>
+        <p class="section-intro">Language models are good at producing plausible next steps. Plausibility is not the same as completion. Dellmod separates a proposed action from an accepted result.</p>
         <div class="principle-grid">
           <article><span>RULE 01</span><h3>No invisible authority</h3><p>A route carries only the permissions required for its current step. Wallet signatures, destructive changes and sensitive account access remain explicit boundaries.</p></article>
           <article><span>RULE 02</span><h3>No result without a receipt</h3><p>Tool output, changed state, timestamps and verification checks travel with the execution. A confident sentence is never accepted as evidence.</p></article>
@@ -549,7 +549,7 @@ const html = `<!doctype html>
         <h2>An operating model<br />for observable autonomy.</h2>
         <div class="build-grid">
           <div class="build-prose">
-            <p>Resnomo maps autonomous work into a system that can be inspected from intent to evidence.</p>
+            <p>Dellmod maps autonomous work into a system that can be inspected from intent to evidence.</p>
             <p>Missions move through six accountable organs. Permission boundaries interrupt unsafe routes. Verification separates a proposed result from an accepted one. Successful execution becomes a reusable Reflex with a visible history.</p>
             <p>The interface gives every stage a stable place: perception, planning, authorization, execution, verification and memory. The result is a common language for understanding how an agent moved and why the system accepted the outcome.</p>
             <p>Receipts, route schemas, capability versions, sandbox boundaries and Reflex records form one continuous anatomy rather than separate dashboards.</p>
@@ -585,7 +585,7 @@ const html = `<!doctype html>
       </div>
     </aside>
   </div>
-  <footer><span>Resnomo</span><span>Make autonomy observable.</span><a href="#top">Back to top ↑</a></footer>
+  <footer><span>Dellmod</span><span>Make autonomy observable.</span><a href="#top">Back to top ↑</a></footer>
   <script src="./app.js"></script>
 </body>
 </html>`;
