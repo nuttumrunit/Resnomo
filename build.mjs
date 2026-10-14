@@ -411,8 +411,8 @@ const html = `<!doctype html>
         </a>
       </div>
       <div class="ca-box">
-        <div><span>Contract address</span><button type="button" data-copy-ca disabled>Copy</button></div>
-        <code data-ca>TBA</code>
+        <div><span>Contract address</span><button type="button" data-copy-ca>Copy</button></div>
+        <code data-ca>GSGE9whQXgCcajDPPUns2iHMjwMX5WKPpqW5C8vEpump</code>
       </div>
     </aside>
 
